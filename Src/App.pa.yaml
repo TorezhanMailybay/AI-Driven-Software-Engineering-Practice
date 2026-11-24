@@ -1,0 +1,26 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+App:
+  Properties:
+    OnStart: |-
+      =ClearCollect(colRooms,
+       {Id:"A-101", Building:"Arts Building", Blocked:false},
+       {Id:"A-102", Building:"Arts Building", Blocked:false},
+       {Id:"B-201", Building:"Business Block", Blocked:true},
+       {Id:"C-110", Building:"Computer Center", Blocked:false},
+       {Id:"D-301", Building:"Design Wing", Blocked:false});
+      ClearCollect(colBookings,
+       {Id:"b1", RoomId:"A-101", StartMin:540, EndMin:630},
+       {Id:"b2", RoomId:"A-101", StartMin:840, EndMin:900},
+       {Id:"b3", RoomId:"A-102", StartMin:660, EndMin:720},
+       {Id:"b4", RoomId:"C-110", StartMin:780, EndMin:840},
+       {Id:"b5", RoomId:"C-110", StartMin:960, EndMin:1050},
+       {Id:"b6", RoomId:"D-301", StartMin:600, EndMin:660},
+       {Id:"b7", RoomId:"D-301", StartMin:810, EndMin:870})
+    Theme: =PowerAppsTheme
